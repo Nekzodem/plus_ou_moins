@@ -1,24 +1,23 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-/*bibliothèque*/
-
-srand(time(NULL)); 
-/*srand unique permet d'initialiser le générateur de nombres*/
-nombreMystere = (rand() % (MAX - MIN + 1)) + MIN;
-/*variable = (rand fonction) (MAX - MIN constante)*/
-const int MAX = 100, MIN = 1;
-
-if {
-    nombre mystère>nombre entre
-    (Le chiffre demandé est supérieur.)
+function devine(min, max)
+{
+     var nb = min + (max-min+1)*Math.random();
+     return Math.floor(nb);
 }
 
-else if{
-    nombre mystère<nombre entre
-    (Le chiffre demandé est inférieur.)
-}
+var nb = devine(1, 100);
+var cpt = 0;
+var essai;
+var msg = "Veuillez tenter votre chance";
 
-else{
-    (Félicitation, vous avez trouvé le chiffre exact)
+do
+{
+    essai = prompt(msg);
+    cpt++;
+    if(essai > nb)
+        msg = "Raté le numéro est inferieur";
+    else
+        msg = "Raté le numéro est supérieur";
 }
+    
+while(essai != nb);
+alert("Game Over vous avez trouvé en " + cpt + " coups ! Faites mieux la prochaine fois");
